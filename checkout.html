@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYRA - Checkout</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="checkout-body">
+    <main id="checkout-main">
+        <!-- State 1: Success (hidden by default) -->
+        <div id="checkout-success" class="checkout-state hidden">
+            <div class="checkout-success-content">
+                <div class="success-icon-wrapper">
+                    <i data-lucide="check" class="success-icon"></i>
+                </div>
+                <h1 class="font-display tracking-luxury">Pedido Confirmado</h1>
+                <p class="subtitle-text text-muted-foreground">
+                    Agradecemos sua compra consciente. Você receberá um email de confirmação em breve com os detalhes do
+                    envio.
+                </p>
+                <a href="index.html" class="link-all">Voltar ao início</a>
+            </div>
+        </div>
+
+        <!-- State 2: Empty (hidden by default) -->
+        <div id="checkout-empty" class="checkout-state hidden">
+            <div class="checkout-empty-content">
+                <h1 class="font-display tracking-luxury">Carrinho vazio</h1>
+                <p class="subtitle-text text-muted-foreground">Adicione produtos para finalizar a compra.</p>
+                <a href="camisetas.html" class="link-all">Explorar coleção</a>
+            </div>
+        </div>
+
+        <!-- State 3: Checkout Form (hidden by default) -->
+        <div id="checkout-form-state" class="checkout-state hidden">
+            <div class="checkout-container">
+                <h1 class="font-display tracking-luxury text-center title-large">Checkout</h1>
+                <p class="secure-payment text-muted-foreground">
+                    <i data-lucide="lock" class="secure-icon"></i> Pagamento seguro
+                </p>
+
+                <form id="checkout-form" class="checkout-form">
+                    <div class="form-section">
+                        <p class="section-title">Contato</p>
+                        <div class="form-grid grid-2">
+                            <input required placeholder="Nome completo" name="name" class="form-input">
+                            <input required type="email" placeholder="Email" name="email" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <p class="section-title">Endereço de entrega</p>
+                        <div class="form-grid">
+                            <input required placeholder="Endereço" name="address" class="form-input full-width">
+                            <div class="grid-3">
+                                <input required placeholder="Cidade" name="city" class="form-input">
+                                <input required placeholder="Estado" name="state" class="form-input">
+                                <input required placeholder="CEP" name="zip" class="form-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <p class="section-title">Pagamento</p>
+                        <div class="form-grid">
+                            <input required placeholder="Número do cartão" name="cardNumber"
+                                class="form-input full-width">
+                            <div class="grid-2">
+                                <input required placeholder="Validade (MM/AA)" name="cardExpiry" class="form-input">
+                                <input required placeholder="CVV" name="cardCVV" class="form-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-summary">
+                        <div id="checkout-items" class="summary-items">
+                            <!-- Items injected via JS -->
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Subtotal</span>
+                            <span class="summary-value font-display" id="checkout-subtotal">R$ 0,00</span>
+                        </div>
+                        <div class="summary-row text-muted-foreground" style="font-size: 0.875rem;">
+                            <span>Frete</span>
+                            <span>Grátis (carbono-neutro)</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span class="summary-label">Total</span>
+                            <span class="summary-total font-display" id="checkout-total">R$ 0,00</span>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Comprar com Segurança</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

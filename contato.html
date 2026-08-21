@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYRA - Contato</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="contato-body">
+    <main class="page-padding">
+        <div class="max-w-7xl mx-auto container-px">
+            <div class="scroll-reveal">
+                <p class="subtitle text-muted-foreground mb-6">Contato & Suporte</p>
+                <h1 class="font-display title-hero tracking-luxury mb-6">Fale Conosco</h1>
+                <p class="text-base text-muted-foreground max-w-xl leading-relaxed">
+                    Estamos aqui para ajudar. Entre em contato para dúvidas, suporte ou parcerias.
+                </p>
+            </div>
+
+            <div class="contato-grid mt-20">
+                <div class="scroll-reveal">
+                    <!-- Success Message (hidden by default) -->
+                    <div id="contact-success" class="contact-success-box hidden">
+                        <h3 class="font-display tracking-luxury title-large mb-4" style="font-size: 1.875rem;">Mensagem
+                            enviada</h3>
+                        <p class="text-sm text-muted-foreground mb-8">
+                            Agradecemos seu contato. Responderemos em breve.
+                        </p>
+                        <button id="btn-new-message" class="btn-link-underline">Enviar outra mensagem</button>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form id="contact-form" class="contact-form space-y-8">
+                        <div>
+                            <label class="block subtitle text-muted-foreground mb-2">Nome</label>
+                            <input type="text" required class="form-input" name="name">
+                        </div>
+                        <div>
+                            <label class="block subtitle text-muted-foreground mb-2">Email</label>
+                            <input type="email" required class="form-input" name="email">
+                        </div>
+                        <div>
+                            <label class="block subtitle text-muted-foreground mb-2">Mensagem</label>
+                            <textarea required rows="5" class="form-input resize-none" name="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn-link-underline flex-gap-hover">
+                            Enviar Mensagem
+                            <i data-lucide="arrow-right" class="icon-sm"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="scroll-reveal" data-delay="200">
+                    <div class="space-y-10">
+                        <div>
+                            <p class="subtitle text-muted-foreground mb-4">Email</p>
+                            <a href="mailto:contato@nyra.com"
+                                class="text-base hover-text-secondary transition-colors">contato@nyra.com</a>
+                        </div>
+                        <div>
+                            <p class="subtitle text-muted-foreground mb-4">Showroom</p>
+                            <p class="text-base leading-relaxed">
+                                Rua Oscar Freire, 1000<br>
+                                São Paulo, SP · Brasil
+                            </p>
+                        </div>
+                        <div>
+                            <p class="subtitle text-muted-foreground mb-4">Redes Sociais</p>
+                            <div class="flex gap-5">
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                                    class="hover-text-secondary transition-colors" aria-label="Instagram">
+                                    <i data-lucide="instagram" class="icon-md"></i>
+                                </a>
+                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                                    class="hover-text-secondary transition-colors" aria-label="Facebook">
+                                    <i data-lucide="facebook" class="icon-md"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pt-8 border-t">
+                            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer"
+                                class="btn-outline-dark">
+                                <i data-lucide="message-circle" class="icon-sm"></i>
+                                Suporte via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYRA - Produto</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="produto-body">
+    <!-- Navigation included via generic JS setup or static if we add it -->
+    
+    <main class="page-padding">
+
+        <div class="container-px pb-32">
+            <!-- Loading Skeleton (hidden via JS) -->
+            <div id="produto-loading" class="produto-grid">
+                <div class="skeleton" style="aspect-ratio: 3/4;"></div>
+                <div class="space-y-6">
+                    <div class="skeleton" style="height: 2rem; width: 66%;"></div>
+                    <div class="skeleton" style="height: 1.5rem; width: 33%;"></div>
+                    <div class="skeleton" style="height: 6rem; width: 100%;"></div>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div id="produto-error" class="hidden text-center py-8">
+            </div>
+
+            <!-- Actual Product View -->
+            <div id="produto-content" class="produto-grid hidden">
+                
+                <!-- Gallery -->
+                <div class="produto-gallery-sticky">
+                    <div class="produto-main-img-wrapper">
+                        <img src="" id="main-image" class="produto-main-img" alt="Produto">
+                    </div>
+                    <div id="thumbnails-container" class="produto-thumbnails flex-wrap">
+                        <!-- Thumbnails injected via JS -->
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="produto-info-section">
+                    <div>
+                        <p id="product-subcategory" class="subtitle text-muted-foreground mb-3"></p>
+                        <h1 id="product-title" class="font-display title-hero tracking-luxury" style="font-size: 2.5rem;"></h1>
+                        <p id="product-price" class="produto-price"></p>
+                    </div>
+
+                    <p id="product-desc" class="produto-desc"></p>
+
+                    <!-- Colors (todas as categorias) -->
+                    <div id="colors-wrapper" class="hidden">
+                        <p class="subtitle text-muted-foreground mb-4">Cor: <span id="selected-color-label"></span></p>
+                        <div id="colors-container" class="flex flex-wrap gap-3"></div>
+                    </div>
+
+                    <!-- ===== ROUPAS: Tamanho + Tecido ===== -->
+                    <div id="clothing-section" class="hidden">
+                        <!-- Sizes -->
+                        <div id="sizes-wrapper" class="hidden">
+                            <div class="flex items-center justify-between mb-4">
+                                <p class="subtitle text-muted-foreground m-0">Tamanho: <span id="selected-size-label"></span></p>
+                            </div>
+                            <div id="sizes-container" class="flex flex-wrap gap-3"></div>
+                            <!-- Size Guide Table -->
+                            <div id="size-guide-table" class="border border-secondary p-6 mt-4 overflow-x-auto text-sm">
+                                <table style="width:100%; text-align:left; border-collapse:collapse;">
+                                    <thead>
+                                        <tr style="border-bottom: 1px solid var(--secondary);">
+                                            <th style="padding: 0.5rem 0;">Tamanho</th>
+                                            <th>Busto (cm)</th>
+                                            <th>Cintura (cm)</th>
+                                            <th>Quadril (cm)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid var(--muted);"><td style="padding: 0.5rem 0;">P</td><td>86-90</td><td>66-70</td><td>92-96</td></tr>
+                                        <tr style="border-bottom: 1px solid var(--muted);"><td style="padding: 0.5rem 0;">M</td><td>90-94</td><td>70-74</td><td>96-100</td></tr>
+                                        <tr><td style="padding: 0.5rem 0;">G</td><td>94-98</td><td>74-78</td><td>100-104</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Fabric Composition -->
+                        <div id="fabric-wrapper" class="hidden" style="margin-top: 1.5rem;">
+                            <p class="subtitle text-muted-foreground mb-3">Composição do Tecido</p>
+                            <p id="fabric-composition" class="text-sm leading-relaxed"></p>
+                        </div>
+                    </div>
+
+                    <!-- ===== CANECAS: Especificações técnicas ===== -->
+                    <div id="caneca-section" class="hidden">
+                        <p class="subtitle text-muted-foreground mb-4">Especificações</p>
+                        <div class="specs-grid" id="caneca-specs-grid">
+                            <!-- Injetado via JS -->
+                        </div>
+                        <div id="caneca-care" class="care-section">
+                            <p class="subtitle text-muted-foreground mb-4">Cuidados</p>
+                            <div class="care-icons-row" id="caneca-care-icons">
+                                <!-- Injetado via JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== ECOBAGS: Especificações técnicas ===== -->
+                    <div id="ecobag-section" class="hidden">
+                        <p class="subtitle text-muted-foreground mb-4">Especificações</p>
+                        <div class="specs-grid" id="ecobag-specs-grid">
+                            <!-- Injetado via JS -->
+                        </div>
+                        <div id="ecobag-impact" class="ecobag-impact-widget">
+                            <p class="subtitle text-muted-foreground mb-4">Impacto Ambiental</p>
+                            <div class="ecobag-impact-stat">
+                                <span class="font-display ecobag-impact-number" id="ecobag-plastics-num">0</span>
+                                <div class="ecobag-impact-label">
+                                    <span class="ecobag-impact-title">plásticos substituídos</span>
+                                    <span class="text-xs text-muted-foreground">por ano de uso estimado</span>
+                                </div>
+                            </div>
+                            <div class="impact-bar-bg" style="margin-top: 1rem;">
+                                <div class="impact-bar-fill" id="ecobag-plastics-bar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="btn-add-cart" class="btn-add-to-cart">Adicionar ao Carrinho</button>
+
+                    <!-- Impacto Ambiental (apenas roupas) -->
+                    <div id="impact-section" class="hidden">
+                        <div class="impact-widget">
+                            <p class="subtitle text-muted-foreground mb-8">Impacto Ambiental</p>
+                            <div class="space-y-10">
+                                <div>
+                                    <div class="flex justify-between items-baseline mb-3">
+                                        <span class="text-sm" id="pet-label">Garrafas PET retiradas</span>
+                                        <span class="font-display title-large tracking-luxury" id="impact-pet">0</span>
+                                    </div>
+                                    <div class="impact-bar-bg">
+                                        <div class="impact-bar-fill" id="impact-pet-bar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between items-baseline mb-3">
+                                        <span class="text-sm">Água preservada</span>
+                                        <span class="font-display title-large tracking-luxury"><span id="impact-water">0</span><span class="text-base ml-1">L</span></span>
+                                    </div>
+                                    <div class="impact-bar-bg">
+                                        <div class="impact-bar-fill" id="impact-water-bar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-muted-foreground mt-8 leading-relaxed">Dados calculados com base na composição do tecido e no processo de fabricação desta peça.</p>
+                        </div>
+                    </div>
+
+                    <div class="produto-features">
+                        <div class="feature-item">
+                            <i data-lucide="check" class="feature-icon"></i>
+                            <p class="text-sm text-muted-foreground" id="feature-1">Entrega carbono-neutro com embalagem reciclável</p>
+                        </div>
+                        <div class="feature-item">
+                            <i data-lucide="check" class="feature-icon"></i>
+                            <p class="text-sm text-muted-foreground">Produção ética e transparente</p>
+                        </div>
+                        <div class="feature-item">
+                            <i data-lucide="check" class="feature-icon"></i>
+                            <p class="text-sm text-muted-foreground" id="feature-3">Troca gratuita em até 30 dias</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

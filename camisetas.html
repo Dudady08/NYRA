@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYRA - Camisetas</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-category="camisetas">
+    <main>
+        <!-- Category Hero Section -->
+        <section class="category-hero">
+            <img src="Fotos Nyra/Foto camiseta.jpg" class="category-hero-bg" alt="Camisetas">
+            <div class="category-hero-overlay"></div>
+
+            <div class="category-hero-content">
+                <h1 class="font-display">Camisetas</h1>
+                <p>Sustentabilidade em cada fibra. Fibras recicladas de altíssima qualidade.</p>
+            </div>
+        </section>
+
+        <!-- Marquee Section -->
+        <div class="marquee-container" aria-label="Impacto ambiental: 6 garrafas PET retiradas por peça">
+            <div class="marquee">
+                <div class="marquee-content">
+                    <span class="marquee-text font-display">Sustentabilidade em cada fibra — A cada 1 camiseta
+                        produzida,
+                        6 garrafas PET são retiradas da natureza.</span>
+                    <span class="marquee-separator">◆</span>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <span class="marquee-text font-display">Sustentabilidade em cada fibra — A cada 1 camiseta
+                        produzida,
+                        6 garrafas PET são retiradas da natureza.</span>
+                    <span class="marquee-separator">◆</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Catalog Section -->
+        <section class="catalog-section">
+            <div class="container catalog-layout">
+                <!-- Sidebar Filters -->
+                <aside class="sidebar-filters" id="filters-container">
+                    <!-- Filters injected via JS -->
+                </aside>
+
+                <!-- Product Grid -->
+                <div class="catalog-grid-container">
+                    <div class="vitrine-grid" id="category-products">
+                        <!-- Products injected via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

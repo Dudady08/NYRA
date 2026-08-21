@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYRA - Eco-Luxury</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="Fotos Nyra/Foto moletom.jpg"
+                class="hero-bg" alt="NYRA Eco-Luxury modelo em ambiente minimalista">
+            <div class="hero-overlay"></div>
+
+            <h1 class="hero-title">NYRA</h1>
+
+
+
+            <div class="hero-bottom-left">
+                <p class="hero-headline">O luxo que preserva.</p>
+                <p class="hero-subheadline">Moda consciente de altíssimo padrão. Cada peça, um artefato de preservação.
+                </p>
+                <div class="hero-actions">
+                    <a href="camisetas.html" class="magnetic-button btn-primary" data-strength="0.25">
+                        Descubra a Coleção <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="colecoes.html" class="magnetic-button btn-secondary" data-strength="0.25">
+                        Nossa Missão
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-bottom-right">
+                <a href="colecoes.html" class="magnetic-button btn-outline" data-strength="0.35">
+                    Shop the Drop
+                </a>
+            </div>
+
+            <div class="hero-scroll-indicator">
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <!-- Manifesto Section -->
+        <section class="manifesto">
+            <div class="container">
+                <div class="manifesto-grid">
+                    <div class="scroll-reveal" data-delay="0">
+                        <div class="manifesto-image-wrapper">
+                            <img src="Fotos Nyra/Foto animais.jpg"
+                                alt="Natureza reclaimando o concreto manifesto NYRA">
+                        </div>
+                    </div>
+                    <div class="scroll-reveal" data-delay="200">
+                        <div class="manifesto-content">
+                            <p class="subtitle">Manifesto</p>
+                            <h2>Rejeitamos a ideia de que sustentabilidade é rústica.</h2>
+                            <p>Para NYRA, sustentabilidade é a expressão máxima de precisão, raridade e poder
+                                consciente. Cada peça é um artefato de preservação ambiental — luxo que não compromete o
+                                amanhã.</p>
+                            <p>Nossos tecidos são compostos por fibras recicladas de altíssima qualidade, transformando
+                                resíduos em elegância. A cada peça, retiramos garrafas PET da natureza e preservamos
+                                milhares de litros de água.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vitrine: Lançamentos -->
+        <section class="vitrine">
+            <div class="container">
+                <div class="scroll-reveal vitrine-header">
+                    <div>
+                        <p class="subtitle">Novidades</p>
+                        <h2>Lançamentos da Temporada</h2>
+                    </div>
+                    <a href="camisetas.html" class="link-all desktop-only">Ver tudo <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="vitrine-grid" id="vitrine-new">
+                    <!-- Products rendered via JS -->
+                </div>
+                <div class="vitrine-footer mobile-only">
+                    <a href="camisetas.html" class="link-all">Ver tudo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vitrine: Mais Desejados -->
+        <section class="vitrine">
+            <div class="container">
+                <div class="scroll-reveal vitrine-header">
+                    <div>
+                        <p class="subtitle">Bestsellers</p>
+                        <h2>Mais Desejados</h2>
+                    </div>
+                    <a href="moletons-casacos.html" class="link-all desktop-only">Ver tudo <i
+                            data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="vitrine-grid" id="vitrine-bestsellers">
+                    <!-- Products rendered via JS -->
+                </div>
+                <div class="vitrine-footer mobile-only">
+                    <a href="moletons-casacos.html" class="link-all">Ver tudo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sustainability Counter -->
+        <section class="sustainability">
+            <div class="container">
+                <div class="scroll-reveal text-center mb-16">
+                    <p class="subtitle text-secondary mb-6">Impacto NYRA</p>
+                    <h2 class="max-w-2xl mx-auto">Cada peça conta uma história de preservação.</h2>
+                </div>
+
+                <div class="metrics-wrapper">
+                    <div class="metrics-grid">
+                        <div class="scroll-reveal metric-item" data-delay="0">
+                            <p class="metric-value"><span class="sustainability-counter" data-value="48230">0</span></p>
+                            <p class="metric-label">Garrafas PET retiradas da natureza</p>
+                        </div>
+                        <div class="scroll-reveal metric-item" data-delay="100">
+                            <p class="metric-value"><span class="sustainability-counter" data-value="125000">0</span>L
+                            </p>
+                            <p class="metric-label">Água preservada em litros</p>
+                        </div>
+                        <div class="scroll-reveal metric-item" data-delay="200">
+                            <p class="metric-value"><span class="sustainability-counter" data-value="8900">0</span></p>
+                            <p class="metric-label">Peças conscientes entregues</p>
+                        </div>
+                        <div class="scroll-reveal metric-item" data-delay="300">
+                            <p class="metric-value"><span class="sustainability-counter" data-value="100">0</span>%</p>
+                            <p class="metric-label">Material reciclado e orgânico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collection Tease -->
+        <section class="collection-tease">
+            <img src="Fotos Nyra/Foto limitada.jpg"
+                class="collection-tease-bg" alt="NYRA Coleções Especiais — editorial">
+            <div class="collection-tease-overlay"></div>
+
+            <div class="collection-tease-content">
+                <div class="scroll-reveal text-center flex-col-center">
+                    <p class="subtitle text-white-70">Coleções Especiais</p>
+                    <h2 class="text-white">Edições Limitadas</h2>
+                    <p class="desc text-white-70">Drops exclusivos com storytelling único. Peças que transcendem moda —
+                        são artefatos de preservação.</p>
+
+                    <a href="colecoes.html" class="magnetic-button btn-outline-white" data-strength="0.35">
+                        Explorar Coleções <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
